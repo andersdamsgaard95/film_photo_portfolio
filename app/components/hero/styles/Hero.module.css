@@ -1,0 +1,43 @@
+.hero {
+  height: 700px;
+  position: relative;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero .heroHeading {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 100px;
+  padding-right: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .hero .heroHeading {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .hero .heroHeading {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.hero .heroHeading h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hero .heroHeading h1 span:nth-of-type(2) {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=Hero.module.css.map */

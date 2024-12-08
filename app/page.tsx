@@ -1,95 +1,50 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+//  HOME PAGE
 
-export default function Home() {
+import styles from "./styles/homePage.module.scss";
+import getData from './utils/getData';
+import Hero from './components/hero/Hero';
+import GalleryDisplay from "./components/galleryDisplay/GalleryDisplay";
+import Button from './components/button/Button';
+
+export default async function Home() {
+
+  //  Getting the return from imported getData component
+  const images = await getData();
+
+  //  filter the images so only featured stays
+  const featuredImages = images.filter((image:any) => 
+      image.featured === 'true'  
+  );
+
+  //  sort the images after sortOrder (number given as context metadata)
+  const sortedFeaturedImages = featuredImages.sort((a:any, b:any) => 
+        a.sortOrder - b.sortOrder
+  );
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div>
+      <Hero
+        imgURL="./static_images/hero.jpg"
+        imgAlt="black and white film photo of Freja reading a book"
+        heading="Analog photography"
+        heading2="capturen by Anders Damsgaard"
+        buttonHref='/gallery'
+        buttonText="Gallery"
+        buttonBackgroundColor='transparrent'
+        buttonColor='white'
+      />
+      <section className={styles.featuredPhotos}>
+        <h2>Featured Photos</h2>
+        <GalleryDisplay 
+          filteredImages={sortedFeaturedImages} 
         />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <Button 
+          href='/gallery'
+          text='See all'
+          backgroundColor="transparrent"
+          color="black"
+        />
+      </section>
     </div>
   );
 }

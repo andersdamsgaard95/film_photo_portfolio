@@ -1,0 +1,20 @@
+@import '../../../styles/partial';
+
+.galleryPage {
+    @include responsivePadding;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    display: flex;
+    gap: $standardBigGap;
+
+        .headingAndFilter {
+            display: flex;
+            flex-direction: column;
+            gap: $standardMediumGap;
+
+                select {
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+        }
+}

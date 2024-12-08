@@ -1,0 +1,36 @@
+// Variables
+$header-footer-color: #292929;
+$backgroundColor: #F5F5F5;
+$standardBigGap: 50px;
+$standardMediumGap: 25px;
+$standardSmallGap: 10px;
+
+
+//  Mixins
+@mixin responsivePadding {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @media screen and (max-width: 1000px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @media screen and (max-width: 700px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    } 
+}
+
+@mixin h1Styles {
+    font-size: 1.5rem;
+    font-weight: inherit;
+}
+@mixin h2Styles {
+    font-size: 1.3rem;
+    font-weight: inherit;
+}
+@mixin h3Styles {
+    font-size: 1.1rem;
+    font-weight: inherit;
+}

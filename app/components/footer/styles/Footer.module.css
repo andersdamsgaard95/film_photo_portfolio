@@ -1,0 +1,18 @@
+.footer {
+  height: 100px;
+  background-color: orange;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+@media screen and (max-width: 1000px) {
+  .footer {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}/*# sourceMappingURL=Footer.module.css.map */

@@ -1,0 +1,26 @@
+@import '../../../styles/partial';
+
+.button {
+    border-radius: 5px;
+    padding: 10px 30px;
+    width: fit-content;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.whiteHover {
+    border: 1px solid white;
+
+        &:hover {
+            background-color: white;
+            color: black !important;
+        }
+}
+.blackHover {
+    border: 1px solid black;
+
+        &:hover {
+            background-color: black;
+            color: white !important;
+        }
+}

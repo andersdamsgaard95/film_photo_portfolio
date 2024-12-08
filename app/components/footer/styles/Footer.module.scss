@@ -1,0 +1,7 @@
+@import '../../../styles/partial';
+
+.footer {
+    height: 100px;
+    background-color: orange;
+    @include responsivePadding;
+}

@@ -1,0 +1,35 @@
+@import '../../../styles/partial';
+
+.hero {
+    height: 700px;
+    position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .heroHeading {
+            position: absolute;
+            width: 100%;
+            max-width: 600px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include responsivePadding;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: $standardBigGap;
+
+                h1 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $standardSmallGap;
+
+                        span:nth-of-type(2) {
+                            font-size: 1.2rem;
+                        }
+                }
+        }
+}

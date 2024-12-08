@@ -1,0 +1,29 @@
+.galleryPage {
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  display: flex;
+  gap: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .galleryPage {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .galleryPage {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.galleryPage .headingAndFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.galleryPage .headingAndFilter select {
+  padding: 10px;
+  border-radius: 5px;
+}/*# sourceMappingURL=GalleryFilter.module.css.map */

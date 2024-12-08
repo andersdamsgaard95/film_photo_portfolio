@@ -1,0 +1,26 @@
+@import '../../../styles/partial';
+
+.header {
+    height: 100px;
+    background-color: transparent;
+    @include responsivePadding;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    color: white;
+
+        .logo {
+            width: 75px;
+            z-index: 20;
+        }
+
+        .navLink {
+            text-decoration: none;
+            color: inherit;
+        }
+}
+
+.backgroundHeader {
+    background-color: $header-footer-color;
+}

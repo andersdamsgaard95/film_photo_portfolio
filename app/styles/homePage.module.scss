@@ -1,0 +1,14 @@
+@import '../styles/partial';
+
+.featuredPhotos {
+    margin-top: $standardBigGap;
+    margin-bottom: $standardBigGap;
+    @include responsivePadding;
+    display: flex;
+    flex-direction: column;
+    gap: $standardBigGap;
+    
+        h2 {
+            @include h2Styles;
+        }
+}
