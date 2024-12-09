@@ -1,0 +1,49 @@
+@import '../../../styles/partial';
+
+//  Photo pop-up
+.photoPopUpBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 69, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+
+        .photoPopUp {
+            width: 100%;
+            max-height: calc(100vh - 50px);
+            overflow: auto;
+            margin: $standardBigGap;
+            padding: $standardBigGap;
+            background-color: $header-footer-color;
+            display: flex;
+            gap: $standardMediumGap;
+            color: white;
+
+                .imgContainer {
+                    width: auto;
+                    max-width: 800px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                }
+                .imgInfoContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $standardMediumGap;
+
+                        .imgInfoBulletPoint {
+                            display: flex;
+                            flex-direction: column;
+                            gap: $standardSmallGap;
+                        }
+                }
+        }
+}

@@ -1,5 +1,6 @@
 'use client';
 
+import PhotoPopUp from '../PhotoPopUp/PhotoPopUp';
 import styles from './styles/GalleryDisplay.module.scss';
 import { useState } from 'react';
 
@@ -9,12 +10,10 @@ type GalleryDisplayProps = {
 
 export default function GalleryDisplay({ filteredImages }: GalleryDisplayProps) {
 
-    const [photoIsClicked, setPhotoIsClicked] = useState<boolean>(false);
     const [clickedPhotoIndex, setClickedPhotoIndex] = useState<number | null>(null);
 
     // Function to show photo pop-up with details
     function showPhoto(clickedPhotoIndex:number) {
-        setPhotoIsClicked(true);
         setClickedPhotoIndex(clickedPhotoIndex);
     }
 
@@ -34,14 +33,11 @@ export default function GalleryDisplay({ filteredImages }: GalleryDisplayProps) 
 
             {/* Photo pop-up onClick MAKE ITS OWN COMPONENT*/}
             {
-                photoIsClicked && clickedPhotoIndex !== null &&
-                    (
-                        <div className={styles.photoPopUpBackground}>
-                            <div className={styles.photoPopUp}>
-                                <img src={filteredImages[clickedPhotoIndex].src} alt={filteredImages[clickedPhotoIndex].description} />
-                            </div>
-                        </div>
-                    )
+                clickedPhotoIndex !== null && (
+                    <PhotoPopUp 
+                        image={filteredImages[clickedPhotoIndex]}
+                    />
+                )
             }
         </div>
     )

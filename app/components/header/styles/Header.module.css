@@ -22,14 +22,10 @@
   }
 }
 .header .logo {
-  width: 75px;
+  width: 40px;
   z-index: 20;
 }
 .header .navLink {
   text-decoration: none;
   color: inherit;
-}
-
-.backgroundHeader {
-  background-color: #292929;
 }/*# sourceMappingURL=Header.module.css.map */
