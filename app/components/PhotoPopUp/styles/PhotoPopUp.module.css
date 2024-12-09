@@ -4,7 +4,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 69, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,32 +11,82 @@
 }
 .photoPopUpBackground .photoPopUp {
   width: 100%;
+  max-width: 1200px;
   max-height: calc(100vh - 50px);
   overflow: auto;
-  margin: 50px;
   padding: 50px;
   background-color: #292929;
   display: flex;
-  gap: 25px;
+  gap: 50px;
   color: white;
 }
-.photoPopUpBackground .photoPopUp .imgContainer {
-  width: auto;
-  max-width: 800px;
+@media screen and (max-width: 900px) {
+  .photoPopUpBackground .photoPopUp {
+    flex-direction: column;
+  }
 }
-.photoPopUpBackground .photoPopUp .imgContainer img {
+.photoPopUpBackground .photoPopUp .imgContainerLandscape {
   width: 100%;
+  aspect-ratio: 6/4;
+}
+.photoPopUpBackground .photoPopUp .imgContainerLandscape img {
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.photoPopUpBackground .photoPopUp .imgContainerPortrait {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/6;
+  align-self: center;
+}
+.photoPopUpBackground .photoPopUp .imgContainerPortrait img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .photoPopUpBackground .photoPopUp .imgInfoContainer {
   display: flex;
   flex-direction: column;
+  min-width: 200px;
   gap: 25px;
 }
 .photoPopUpBackground .photoPopUp .imgInfoContainer .imgInfoBulletPoint {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.photoPopUpBackground .containerForExitButton {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 1200px;
+  max-height: calc(100vh - 50px);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.photoPopUpBackground .containerForExitButton .xIcon {
+  width: 40px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: scale 0.2s ease;
+}
+.photoPopUpBackground .containerForExitButton .xIcon:hover {
+  scale: 102%;
+}
+.photoPopUpBackground .containerForExitButton .xIcon img {
+  width: 100%;
 }/*# sourceMappingURL=PhotoPopUp.module.css.map */

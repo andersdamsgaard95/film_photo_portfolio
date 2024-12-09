@@ -29,6 +29,7 @@ export async function GET() {
           description: image.context?.custom?.description || "",
           country: image.context?.custom?.country || '',
           featured: image.context?.custom?.featured || null,
+          view: image.context?.custom?.view || null,
           sortOrder: parseInt(image.context?.custom?.sortOrder) || null,
           tags: image.context.custom.tags ? image.context.custom.tags.split(', ') : [],
           public_id: image.public_id,

@@ -16,6 +16,9 @@ export default function GalleryDisplay({ filteredImages }: GalleryDisplayProps) 
     function showPhoto(clickedPhotoIndex:number) {
         setClickedPhotoIndex(clickedPhotoIndex);
     }
+    function closePopUp() {
+        setClickedPhotoIndex(null);
+    }
 
     return (
         <div className={styles.galleryContainer}>
@@ -36,6 +39,7 @@ export default function GalleryDisplay({ filteredImages }: GalleryDisplayProps) 
                 clickedPhotoIndex !== null && (
                     <PhotoPopUp 
                         image={filteredImages[clickedPhotoIndex]}
+                        closePopUp={closePopUp}
                     />
                 )
             }
