@@ -18,5 +18,14 @@
         .navLink {
             text-decoration: none;
             color: inherit;
+            transition: scale 0.2s ease;
+
+                &:hover {
+                    scale: 104%;
+                }
+        }
+
+        .active {
+            text-decoration: underline;
         }
 }

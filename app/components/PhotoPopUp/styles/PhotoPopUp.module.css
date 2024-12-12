@@ -25,6 +25,11 @@
     flex-direction: column;
   }
 }
+@media screen and (max-width: 700px) {
+  .photoPopUpBackground .photoPopUp {
+    padding: 10px;
+  }
+}
 .photoPopUpBackground .photoPopUp .imgContainerLandscape {
   width: 100%;
   aspect-ratio: 6/4;
@@ -58,6 +63,14 @@
   flex-direction: column;
   gap: 10px;
 }
+.photoPopUpBackground .photoPopUp .imgInfoContainer .imgInfoBulletPoint .bulletPointHeading {
+  font-weight: 600;
+}
+.photoPopUpBackground .photoPopUp .imgInfoContainer .seperaterLine {
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
 .photoPopUpBackground .containerForExitButton {
   position: relative;
   width: -moz-fit-content;
@@ -67,20 +80,21 @@
   margin-left: 50px;
   margin-right: 50px;
 }
+@media screen and (max-width: 700px) {
+  .photoPopUpBackground .containerForExitButton {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
 .photoPopUpBackground .containerForExitButton .xIcon {
   width: 40px;
-  aspect-ratio: 1/1;
   position: absolute;
   left: 0;
   top: 0;
   transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  border: 2px solid black;
   cursor: pointer;
   transition: scale 0.2s ease;
 }
@@ -88,5 +102,6 @@
   scale: 102%;
 }
 .photoPopUpBackground .containerForExitButton .xIcon img {
-  width: 100%;
+  width: 40px;
+  height: 40px;
 }/*# sourceMappingURL=PhotoPopUp.module.css.map */

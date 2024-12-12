@@ -11,17 +11,17 @@ export default function Header() {
         <nav 
             className={styles.header}
             style={{
-                backgroundColor: pathname === '/about' ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+                backgroundColor: pathname === '/about' ? 'rgba(0, 0, 0, 0.6)' : 'transparent',
                 color: pathname === '/gallery' ? 'black' : 'white'
             }}
         >
                 <Link href='/'>
                     <img className={styles.logo} src={pathname === '/gallery' ? "./icons/home_icon_black.svg": "./icons/home_icon_white.svg"} alt="" />
                 </Link>
-                <Link href='/photographies' className={styles.navLink}>
-                    Photographies   
+                <Link href='/gallery' className={`${styles.navLink} ${pathname === '/gallery' ? styles.active : ''}`}>
+                    Photos   
                 </Link>
-                <Link href='/about' className={styles.navLink}>
+                <Link href='/about' className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}>
                     About
                 </Link>
         </nav>

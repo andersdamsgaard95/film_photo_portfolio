@@ -13,19 +13,19 @@ export default function PhotoPopUp ({ image, closePopUp }: PhotoPopUpProps) {
                 <div className={styles.photoPopUp}>
                     <div 
                         className={`${image.view === 'portrait' ? styles.imgContainerPortrait : styles.imgContainerLandscape}`} 
-                        style={{
-                            aspectRatio: image.view === 'portrait' ? '4/6' : '6/4',
-                        }}>
+                    >
                                 <img src={image.url} alt={image.description} />
                     </div>
                     <div className={styles.imgInfoContainer}>
                         <p>{image.description}</p>
+                        <div className={styles.seperaterLine}></div>
                         <div className={styles.imgInfoBulletPoint}>
-                            <p>Country</p>
+                            <p className={styles.bulletPointHeading}>Country:</p>
                             <p>{image.country}</p>
                         </div>
+                        <div className={styles.seperaterLine}></div>
                         <div className={styles.imgInfoBulletPoint}>
-                            <p>Tags</p>
+                            <p className={styles.bulletPointHeading}>Tags:</p>
                             <p>{image.tags.join(', ')}</p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ export default function PhotoPopUp ({ image, closePopUp }: PhotoPopUpProps) {
                     className={styles.xIcon}
                     onClick={closePopUp}
                 >
-                        <img src="./icons/x_icon.svg" alt="Exit photo pop-up" />
+                        <img src="./icons/x_button.svg" alt="Exit photo pop-up" />
                 </div>
             </div>
         </div>

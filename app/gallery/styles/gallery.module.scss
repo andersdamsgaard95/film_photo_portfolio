@@ -1,2 +1,26 @@
 @import '../../styles/partial';
 
+.loadingSkeleton {
+    @include responsivePadding;
+    margin-top: calc(100px + $standardBigGap);
+    margin-bottom: $standardBigGap;
+    display: flex;
+    gap: $standardBigGap;
+
+        p {
+            @include h1Styles;
+        }
+    
+        .imageSkeleton {
+            display: flex;
+            gap: $standardBigGap;
+            flex-wrap: wrap;
+            width: 100%;
+
+                .imageBox {
+                    width: calc(50% - 25px);
+                    aspect-ratio: 6/4;
+                    background-color: $header-footer-color;
+                }
+        }
+}

@@ -18,6 +18,11 @@
     padding-right: 10px;
   }
 }
+@media screen and (max-width: 900px) {
+  .galleryPage {
+    flex-direction: column;
+  }
+}
 .galleryPage .headingAndFilter {
   display: flex;
   flex-direction: column;
@@ -26,4 +31,5 @@
 .galleryPage .headingAndFilter select {
   padding: 10px;
   border-radius: 5px;
+  max-width: 200px;
 }/*# sourceMappingURL=GalleryFilter.module.css.map */

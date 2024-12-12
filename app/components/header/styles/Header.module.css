@@ -28,4 +28,11 @@
 .header .navLink {
   text-decoration: none;
   color: inherit;
+  transition: scale 0.2s ease;
+}
+.header .navLink:hover {
+  scale: 104%;
+}
+.header .active {
+  text-decoration: underline;
 }/*# sourceMappingURL=Header.module.css.map */

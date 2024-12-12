@@ -5,21 +5,23 @@ import getData from './utils/getData';
 import Hero from './components/hero/Hero';
 import GalleryDisplay from "./components/galleryDisplay/GalleryDisplay";
 import Button from './components/button/Button';
+import { Suspense } from "react";
+import React from "react";
 
-export default async function Home() {
 
-  //  Getting the return from imported getData component
+async function FeaturedImages() {
+  // Getting the return from imported getData component
   const images = await getData();
-
-  //  filter the images so only featured stays
+  // filter the images so only featured stays
   const featuredImages = images.filter((image:any) => 
-      image.featured === 'true'  
+    image.featured === 'true').sort((a:any, b:any) => 
+    a.sortOrder - b.sortOrder
   );
 
-  //  sort the images after sortOrder (number given as context metadata)
-  const sortedFeaturedImages = featuredImages.sort((a:any, b:any) => 
-        a.sortOrder - b.sortOrder
-  );
+  return <GalleryDisplay filteredImages={featuredImages} />
+}
+
+export default function Home() {
 
   return (
     <div>
@@ -28,6 +30,7 @@ export default async function Home() {
         imgAlt="black and white film photo of Freja reading a book"
         heading="Analog photography"
         heading2="capturen by Anders Damsgaard"
+        hasButton={true}
         buttonHref='/gallery'
         buttonText="Gallery"
         buttonBackgroundColor='transparrent'
@@ -35,9 +38,9 @@ export default async function Home() {
       />
       <section className={styles.featuredPhotos}>
         <h2>Featured Photos</h2>
-        <GalleryDisplay 
-          filteredImages={sortedFeaturedImages} 
-        />
+        <Suspense fallback={<div>Loading featured images</div>}>
+          <FeaturedImages />
+        </Suspense>
         <Button 
           href='/gallery'
           text='See all'

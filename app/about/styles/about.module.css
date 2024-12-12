@@ -1,1 +1,54 @@
-/*# sourceMappingURL=about.module.css.map */
+.aboutPage {
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 100px;
+}
+@media screen and (max-width: 1000px) {
+  .aboutPage {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .aboutPage {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .aboutPage {
+    gap: 50px;
+  }
+}
+.aboutPage .section1 {
+  grid-column: 1/2;
+}
+.aboutPage .section2 {
+  grid-column: 2/3;
+}
+.aboutPage .aboutSectionStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.aboutPage .aboutSectionStyle .imgContainer {
+  width: 100%;
+}
+.aboutPage .aboutSectionStyle .imgContainer img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.aboutPage .aboutSectionStyle .textChunk {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.aboutPage .aboutSectionStyle .textChunk h2 {
+  font-size: 1rem;
+}/*# sourceMappingURL=about.module.css.map */
