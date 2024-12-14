@@ -27,6 +27,7 @@ export default function Home() {
     <div>
       <Hero
         imgURL="./static_images/hero.jpg"
+        smallScreenImgURL='./static_images/hero_small_screen.jpg'
         imgAlt="black and white film photo of Freja reading a book"
         heading="Analog photography"
         heading2="capturen by Anders Damsgaard"

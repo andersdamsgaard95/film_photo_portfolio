@@ -21,7 +21,7 @@ type HeroProps = {
 
 export default function Hero({ imgURL, smallScreenImgURL, imgAlt, heading, heading2, headingHasBackground, hasButton, buttonText, buttonHref, buttonBackgroundColor, buttonColor }: HeroProps) {
 
-  const [heroImg, setHeroImg] = useState<string>(imgURL)  
+  const [heroImg, setHeroImg] = useState<string>(imgURL); 
   
   useEffect(() => {
     function updateHeroImg() {
@@ -43,8 +43,8 @@ export default function Hero({ imgURL, smallScreenImgURL, imgAlt, heading, headi
   
   return (
         <section className={styles.hero}>
-          <img src={heroImg} alt={imgAlt} />
-          <div className={`${styles.heroHeading} ${headingHasBackground && styles.heroHeadingWithBackground}`}>
+          <img src={heroImg} className={heroImg === smallScreenImgURL ? styles.smallScreenHero : ''} alt={imgAlt} />
+          <div className={`${styles.heroHeading} ${(headingHasBackground || heroImg === smallScreenImgURL) && styles.heroHeadingWithBackground}`}>
             <div className={styles.text}>
               <h1>{heading}</h1>
               <p>{heading2}</p>

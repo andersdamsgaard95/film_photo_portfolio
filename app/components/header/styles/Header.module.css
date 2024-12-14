@@ -4,10 +4,7 @@
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
-  flex-direction: row;
-  gap: 50px;
   align-items: center;
-  color: white;
 }
 @media screen and (max-width: 1000px) {
   .header {
@@ -21,18 +18,25 @@
     padding-right: 10px;
   }
 }
-.header .logo {
+.header .globalNav {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  color: white;
+}
+.header .globalNav .logo {
   width: 40px;
   z-index: 20;
 }
-.header .navLink {
+.header .globalNav .navLink {
   text-decoration: none;
   color: inherit;
   transition: scale 0.2s ease;
 }
-.header .navLink:hover {
+.header .globalNav .navLink:hover {
   scale: 104%;
 }
-.header .active {
+.header .globalNav .active {
   text-decoration: underline;
 }/*# sourceMappingURL=Header.module.css.map */

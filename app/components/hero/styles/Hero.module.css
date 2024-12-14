@@ -12,6 +12,12 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.hero .smallScreenHero {
+  -o-object-position: right;
+     object-position: right;
 }
 .hero .heroHeading {
   position: absolute;

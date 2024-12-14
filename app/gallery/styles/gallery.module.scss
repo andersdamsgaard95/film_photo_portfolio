@@ -7,6 +7,10 @@
     display: flex;
     gap: $standardBigGap;
 
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
+
         p {
             @include h1Styles;
         }
@@ -21,6 +25,10 @@
                     width: calc(50% - 25px);
                     aspect-ratio: 6/4;
                     background-color: $header-footer-color;
+
+                    @media screen and (max-width: 900px) {
+                        width: 100%;
+                    }
                 }
         }
 }

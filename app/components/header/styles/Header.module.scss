@@ -5,27 +5,32 @@
     background-color: transparent;
     @include responsivePadding;
     display: flex;
-    flex-direction: row;
-    gap: 50px;
     align-items: center;
-    color: white;
 
-        .logo {
-            width: 40px;
-            z-index: 20;
-        }
+        .globalNav {
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+            color: white;
 
-        .navLink {
-            text-decoration: none;
-            color: inherit;
-            transition: scale 0.2s ease;
-
-                &:hover {
-                    scale: 104%;
+                .logo {
+                    width: 40px;
+                    z-index: 20;
                 }
-        }
-
-        .active {
-            text-decoration: underline;
+        
+                .navLink {
+                    text-decoration: none;
+                    color: inherit;
+                    transition: scale 0.2s ease;
+        
+                        &:hover {
+                            scale: 104%;
+                        }
+                }
+        
+                .active {
+                    text-decoration: underline;
+                }
         }
 }

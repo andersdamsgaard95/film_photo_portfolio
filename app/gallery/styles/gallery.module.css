@@ -18,6 +18,11 @@
     padding-right: 10px;
   }
 }
+@media screen and (max-width: 900px) {
+  .loadingSkeleton {
+    flex-direction: column;
+  }
+}
 .loadingSkeleton p {
   font-size: 1.5rem;
   font-weight: inherit;
@@ -32,4 +37,9 @@
   width: calc(50% - 25px);
   aspect-ratio: 6/4;
   background-color: #292929;
+}
+@media screen and (max-width: 900px) {
+  .loadingSkeleton .imageSkeleton .imageBox {
+    width: 100%;
+  }
 }/*# sourceMappingURL=gallery.module.css.map */

@@ -1,0 +1,32 @@
+.burgerMenu {
+  position: relative;
+  width: 100%;
+}
+.burgerMenu img {
+  width: 40px;
+  cursor: pointer;
+}
+.burgerMenu .openBurger {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: calc(100% - 10px);
+  max-width: 200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.burgerMenu .openBurger .navLink {
+  text-decoration: none;
+  color: black;
+}
+.burgerMenu .blackBurger {
+  background-color: black !important;
+}
+.burgerMenu .blackBurger .navLink {
+  color: white !important;
+}/*# sourceMappingURL=BurgerMenu.module.css.map */
