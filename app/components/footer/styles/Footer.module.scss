@@ -1,7 +1,89 @@
 @import '../../../styles/partial';
 
 .footer {
-    height: 100px;
-    background-color: black;
+    //height: 200px;
+    background-color: $header-footer-color;
+    color: white;
     @include responsivePadding;
+    padding-top: $standardBigGap;
+    padding-bottom: $standardBigGap;
+    display: flex;
+    flex-direction: row;
+    gap: $standardBigGap;
+
+    @media screen and (max-width: 1100px) {
+        flex-direction: column;
+    }
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .contactFooter {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            @media screen and (max-width: 1100px) {
+                justify-content: start;
+            }
+
+                .contactContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $standardMediumGap;
+
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: $standardSmallGap;
+                        }
+                }
+        }
+        .LinksFooter {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            @media screen and (max-width: 1100px) {
+                justify-content: start;
+            }
+
+                .linksContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $standardMediumGap;
+
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: $standardSmallGap;
+
+                                a {
+                                    text-decoration: none;
+                                    font-style: italic;
+                                    color: inherit;
+                                }
+                        }
+                }
+        }
+        .rightsReservedFooter {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width: 1100px) {
+                justify-content: start;
+            }
+        }
 }
