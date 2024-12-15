@@ -17,7 +17,7 @@ export async function GET() {
       type: "upload",        // Only uploaded resources
       prefix: "",            // Define folder prefix if needed
       context: true,         // Include metadata such as description, tags
-      // max_results: 50,    // Optional: limit the number of results
+      max_results: 500,    // Optional: limit the number of results
     });
 
     // Map the result to extract relevant data (URLs and metadata)
@@ -31,7 +31,7 @@ export async function GET() {
           featured: image.context?.custom?.featured || null,
           view: image.context?.custom?.view || null,
           sortOrder: parseInt(image.context?.custom?.sortOrder) || null,
-          tags: image.context.custom.tags ? image.context.custom.tags.split(', ') : [],
+          tags: image.context?.custom?.tags ? image.context.custom.tags.split(', ') : [],
           public_id: image.public_id
         }
       });

@@ -49,7 +49,7 @@ export default function GalleryDisplay({ filteredImages, possibleToLike, likePho
                                     <button 
                                         className={`${styles.likeButton} ${image.starred === true ? styles.likedButton : ''}`}
                                         onClick={image.starred === true ? () => unlikePhoto(index) : () => likePhoto(index)} >
-                                            {image.starred === true ? 'Favorite ✓' : 'Add to favorites'}
+                                            {image.starred === true ? 'Favored ✓' : 'Add to favorites'}
                                     </button> 
                             }
                     </div>

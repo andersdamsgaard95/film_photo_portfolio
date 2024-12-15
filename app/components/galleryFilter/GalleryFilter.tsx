@@ -30,11 +30,11 @@ export default function GalleryFilter ({ imagesData }: GalleryFilterProps) {
     }, [isHydrated]);
 
     //  Save image list to localStorage whenever they change
-    useEffect(() => {
+    /*useEffect(() => {
         if (isHydrated) {
            localStorage.setItem('galleryImages', JSON.stringify(images)); 
         }
-    }, [images, isHydrated]);
+    }, [images, isHydrated]);*/
 
     function handlefilterChange(e: React.ChangeEvent<HTMLSelectElement>) {
         setFilteredBy(e.target.value);
@@ -69,6 +69,7 @@ export default function GalleryFilter ({ imagesData }: GalleryFilterProps) {
             )
         ) 
     }
+    //localStorage.removeItem('galleryImages');
 
     return (
         <section className={styles.galleryPage}>

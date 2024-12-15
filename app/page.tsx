@@ -12,6 +12,7 @@ import React from "react";
 async function FeaturedImages() {
   // Getting the return from imported getData component
   const images = await getData();
+  
   // filter the images so only featured stays
   const featuredImages = images.filter((image:any) => 
     image.featured === 'true').sort((a:any, b:any) => 
