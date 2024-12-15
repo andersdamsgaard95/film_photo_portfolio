@@ -20,8 +20,8 @@ export default function PhotoPopUp ({ image, closePopUp }: PhotoPopUpProps) {
                         <p>{image.description}</p>
                         <div className={styles.seperaterLine}></div>
                         <div className={styles.imgInfoBulletPoint}>
-                            <p className={styles.bulletPointHeading}>Country:</p>
-                            <p>{image.country}</p>
+                            <p className={styles.bulletPointHeading}>Where:</p>
+                            <p>{image.where}</p>
                         </div>
                         <div className={styles.seperaterLine}></div>
                         <div className={styles.imgInfoBulletPoint}>

@@ -20,8 +20,8 @@ export default function Footer() {
                     <h2>Contact</h2>
                     <ul>
                         {
-                            footerContent.contactInfo.map((contactInfo) => 
-                                <li>{contactInfo}</li>
+                            footerContent.contactInfo.map((contactInfo, index) => 
+                                <li key={index}>{contactInfo}</li>
                             )
                         }
                     </ul>
@@ -32,8 +32,8 @@ export default function Footer() {
                     <h2>Links</h2>
                     <ul>
                         {
-                            footerContent.links.map((link) => 
-                                <li>
+                            footerContent.links.map((link, index) => 
+                                <li key={index}>
                                     <h3>{link.title}:</h3>
                                     <a href={link.url} target='_blank'>mothasmilk.com/andersdamsgaard</a>
                                 </li>

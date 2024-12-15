@@ -27,7 +27,7 @@ export async function GET() {
         return {
           url: image.url,
           description: image.context?.custom?.description || "",
-          country: image.context?.custom?.country || '',
+          where: image.context?.custom?.where || '',
           featured: image.context?.custom?.featured || null,
           view: image.context?.custom?.view || null,
           sortOrder: parseInt(image.context?.custom?.sortOrder) || null,

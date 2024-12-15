@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState, useEffect } from 'react';
 import styles from './styles/GalleryFilter.module.scss';
 import GalleryDisplay from '../galleryDisplay/GalleryDisplay';
@@ -9,21 +9,32 @@ type GalleryFilterProps = {
 
 export default function GalleryFilter ({ imagesData }: GalleryFilterProps) {
 
-    //  Get images from localStorage on initial mount
-    const initialImageList = () => {
-        const savedImageList = localStorage.getItem('galleryImages');
-        return savedImageList ? JSON.parse(savedImageList) : imagesData;
-    }
-
     //  State variables
-    const [images, setImages] = useState<any[]>(initialImageList());
+    const [images, setImages] = useState<any[]>(imagesData);
+    const [filteredImages, setFilteredImages] = useState<any[]>(imagesData);
     const [filteredBy, setFilteredBy] = useState<string>('all photos');
-    const [filteredImages, setFilteredImages] = useState<any[]>(initialImageList());
+    const [isHydrated, setIsHydrated] = useState<boolean>(false);
+
+    //localStorage.removeItem('galleryImages');
+
+    useEffect(() => {
+        if (!isHydrated) {
+            const savedImageList = localStorage.getItem('galleryImages');
+            if (savedImageList) {
+                const parsedImages = JSON.parse(savedImageList);
+                setImages(parsedImages);
+                setFilteredImages(parsedImages);
+            }
+            setIsHydrated(true);
+        }
+    }, [isHydrated]);
 
     //  Save image list to localStorage whenever they change
     useEffect(() => {
-        localStorage.setItem('galleryImages', JSON.stringify(images));
-    }, [images]);
+        if (isHydrated) {
+           localStorage.setItem('galleryImages', JSON.stringify(images)); 
+        }
+    }, [images, isHydrated]);
 
     function handlefilterChange(e: React.ChangeEvent<HTMLSelectElement>) {
         setFilteredBy(e.target.value);
