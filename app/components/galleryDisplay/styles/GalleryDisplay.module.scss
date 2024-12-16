@@ -5,6 +5,8 @@
     flex-direction: row;
     gap: $standardBigGap;
     flex-wrap: wrap;
+    //max-height: 100vh;
+    //overflow: auto;
 
         .imageContainer {
             width: calc(50% - 25px);

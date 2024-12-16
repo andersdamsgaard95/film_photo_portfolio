@@ -1,10 +1,10 @@
 .galleryPage {
   padding-left: 100px;
   padding-right: 100px;
-  margin-top: 150px;
-  margin-bottom: 50px;
   display: flex;
   gap: 50px;
+  margin-bottom: 50px;
+  position: relative;
 }
 @media screen and (max-width: 1000px) {
   .galleryPage {
@@ -24,12 +24,25 @@
   }
 }
 .galleryPage .headingAndFilter {
+  margin-top: 150px;
+}
+.galleryPage .headingAndFilter .stickyContainer {
+  position: sticky;
+  top: 50px;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-.galleryPage .headingAndFilter select {
+.galleryPage .headingAndFilter .stickyContainer select {
   padding: 10px;
   border-radius: 5px;
   max-width: 200px;
+}
+.galleryPage .galleryDisplayContainer {
+  margin-top: 100px;
+}
+@media screen and (max-width: 900px) {
+  .galleryPage .galleryDisplayContainer {
+    margin-top: 0;
+  }
 }/*# sourceMappingURL=GalleryFilter.module.css.map */

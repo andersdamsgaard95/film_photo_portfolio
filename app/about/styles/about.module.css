@@ -31,15 +31,17 @@
   }
 }
 .aboutPage .section1 {
-  grid-column: 1/2;
-}
-@media screen and (max-width: 700px) {
-  .aboutPage .section1 .textChunk {
-    order: -1;
-  }
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 .aboutPage .section2 {
-  grid-column: 2/3;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+@media screen and (max-width: 700px) {
+  .aboutPage .section2 .textChunk {
+    order: -1;
+  }
 }
 .aboutPage .aboutSectionStyle {
   display: flex;

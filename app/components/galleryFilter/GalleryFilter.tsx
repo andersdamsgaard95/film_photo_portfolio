@@ -15,8 +15,6 @@ export default function GalleryFilter ({ imagesData }: GalleryFilterProps) {
     const [filteredBy, setFilteredBy] = useState<string>('all photos');
     const [isHydrated, setIsHydrated] = useState<boolean>(false);
 
-    //localStorage.removeItem('galleryImages');
-
     useEffect(() => {
         if (!isHydrated) {
             const savedImageList = localStorage.getItem('galleryImages');
@@ -30,11 +28,11 @@ export default function GalleryFilter ({ imagesData }: GalleryFilterProps) {
     }, [isHydrated]);
 
     //  Save image list to localStorage whenever they change
-    /*useEffect(() => {
+    useEffect(() => {
         if (isHydrated) {
            localStorage.setItem('galleryImages', JSON.stringify(images)); 
         }
-    }, [images, isHydrated]);*/
+    }, [images, isHydrated]);
 
     function handlefilterChange(e: React.ChangeEvent<HTMLSelectElement>) {
         setFilteredBy(e.target.value);
@@ -74,18 +72,31 @@ export default function GalleryFilter ({ imagesData }: GalleryFilterProps) {
     return (
         <section className={styles.galleryPage}>
             <div className={styles.headingAndFilter}>
-                <h1>Gallery</h1>
-                <select 
-                    name="image filter" 
-                    id="imageFilter"
-                    value={filteredBy}
-                    onChange={handlefilterChange}
-                >
-                        <option value="all photos">all photos</option>
-                        <option value="nature">nature</option>
-                        <option value="travel">travel</option>
-                        <option value="favorites">favorites</option>
-                </select>
+                <div className={styles.stickyContainer}>
+                    <h1>Gallery</h1>
+                    <select 
+                        name="image filter" 
+                        id="imageFilter"
+                        value={filteredBy}
+                        onChange={handlefilterChange}
+                    >
+                            <option value="all photos">all photos</option>
+                            <option value="nature">nature</option>
+                            <option value="travel">travel</option>
+                            <option value="surf">surf</option>
+                            <option value="city">city</option>
+                            <option value="portrait">portrait</option>
+                            <option value="Renault Express">Renault Express</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="black/white">black/white</option>
+                            <option value="favorites">favorites</option>
+                    </select>
+                </div>
             </div>
             <div className={styles.galleryDisplayContainer}>
                 <GalleryDisplay 

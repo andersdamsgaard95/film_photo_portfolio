@@ -18,16 +18,18 @@
     }
 
         .section1 {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+        .section2 {
             grid-column: 1/2;
+            grid-row: 1/2;
 
             @media screen and (max-width: 700px) {
                 .textChunk {
                     order: -1;
                 }
             }
-        }
-        .section2 {
-            grid-column: 2/3;
         }
 
         .aboutSectionStyle {

@@ -20,17 +20,17 @@ export default function AboutPage() {
             }   
         },
         heroText: {
-            h1: 'Hi! I’m Anders, and I like film fotography',
-            p: 'lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb. chsubcijas hjsx.'
+            h1: 'Hi, I’m Anders',
+            p: 'I really enjoy the simplicity and truthiness of a raw unedited film photo. I’ve always agreed with the famous saying “keep it real”. I’m a big fan of an imperfect, no-nonsense, super random, shitty photography.'
         },
         pageText: {
             section1: {
-                heading: 'Heading 1',
-                text: 'lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb . chsubcijas hjsx. lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb. chsubcijas hjsx. lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb. chsubcijas hjsx.'
+                heading: 'Technique',
+                text: 'If I shoot a photo with perfect lines, it’s mostly by coincidence. I basically have no idea what I’m doing. I taught myself just enough about how to manually adjust shutter speed and aperture, but still trying to figure all that stuff out. Shooting film is a simple hobby of mine. The idea about taking a step away from technology and taking things back to their roots is what drives me. To be honest I hate what modern amateur photography has turned into with smartphones taking over the world and ruining the wellbeing and creativity of everyone.'
             },
             section2: {
-                heading: 'Heading 2',
-                text: 'lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb . chsubcijas hjsx. lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb. chsubcijas hjsx. lorem 50 wdeiusnxjasnxjknwjascbxhjas zxkm asjnzbxhjasnxjksajhx hjsakj ajkx sa asxnas xasibxaskjx jsaxnjas xasnksankxsanxjkzcnskdzx . sakcnsan ch snmcijasb sacbiusb. chsubcijas hjsx.'
+                heading: 'Frames',
+                text: 'I try to catch great memories and give myself a chance to smile and giggle every time I look through my photos. I know little about aesthetics, but I tell myself that I have a great sense of when to pull out the old camera and take a snap of whatever is going on. It’s all about good times and good memories.'
             }
         }
     }
@@ -46,21 +46,21 @@ export default function AboutPage() {
             />
             <div className={styles.aboutPage}>
                 <section className={`${styles.section1} ${styles.aboutSectionStyle}`}>
-                    <div className={styles.imgContainer}>
-                        <img src={aboutPageContent.images.pagePicture1.url} alt={aboutPageContent.images.pagePicture1.alt} />
-                    </div>
                     <div className={styles.textChunk}>
                         <h2>{aboutPageContent.pageText.section1.heading}</h2>
                         <p>{aboutPageContent.pageText.section1.text}</p>
                     </div>
+                    <div className={styles.imgContainer}>
+                        <img src={aboutPageContent.images.pagePicture2.url} alt={aboutPageContent.images.pagePicture1.alt} />
+                    </div>
                 </section>
                 <section className={`${styles.section2} ${styles.aboutSectionStyle}`}>
+                    <div className={styles.imgContainer}>
+                        <img src={aboutPageContent.images.pagePicture1.url} alt={aboutPageContent.images.pagePicture2.alt} />
+                    </div>
                     <div className={styles.textChunk}>
                         <h2>{aboutPageContent.pageText.section2.heading}</h2>
                         <p>{aboutPageContent.pageText.section2.text}</p>
-                    </div>
-                    <div className={styles.imgContainer}>
-                        <img src={aboutPageContent.images.pagePicture2.url} alt={aboutPageContent.images.pagePicture2.alt} />
                     </div>
                 </section>
             </div>

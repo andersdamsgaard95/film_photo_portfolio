@@ -2,24 +2,38 @@
 
 .galleryPage {
     @include responsivePadding;
-    margin-top: 150px;
-    margin-bottom: 50px;
     display: flex;
     gap: $standardBigGap;
+    margin-bottom: 50px;
+    position: relative;
 
     @media screen and (max-width: 900px) {
         flex-direction: column;
     }
 
         .headingAndFilter {
-            display: flex;
-            flex-direction: column;
-            gap: $standardMediumGap;
+            margin-top: 150px;
 
-                select {
-                    padding: 10px;
-                    border-radius: 5px;
-                    max-width: 200px;
+                .stickyContainer {
+                    position: sticky;
+                    top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: $standardMediumGap;
+
+                        select {
+                            padding: 10px;
+                            border-radius: 5px;
+                            max-width: 200px;
+                        }
                 }
+        }
+
+        .galleryDisplayContainer {
+            margin-top: 100px;
+        
+            @media screen and (max-width: 900px) {
+                margin-top: 0;
+            }
         }
 }
