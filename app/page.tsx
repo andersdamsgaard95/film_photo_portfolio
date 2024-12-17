@@ -40,7 +40,7 @@ export default function Home() {
       />
       <section className={styles.featuredPhotos}>
         <h2>Featured Photos</h2>
-        <Suspense fallback={<div>Loading featured images</div>}>
+        <Suspense fallback={<div>Loading featured images...</div>}>
           <FeaturedImages />
         </Suspense>
         <Button 

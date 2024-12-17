@@ -16,15 +16,13 @@ export async function GET() {
     const result = await cloudinary.api.resources({
       type: "upload",        // Only uploaded resources
       prefix: "",            // Define folder prefix if needed
-      context: true,         // Include metadata such as description, tags
-      max_results: 500,    // Optional: limit the number of results
+      context: true,         // Include metadata
+      max_results: 500,      // Maximum results returned  
     });
 
-    // Map the result to extract relevant data (URLs and metadata)
-    const images = result.resources.map((image: any) => {
-      console.log(image.tags);
-        
-        return {
+    // Map the result to extract data (URLs and metadata)
+    const images = result.resources.map((image: any) => (
+       {
           url: image.url,
           description: image.context?.custom?.description || "",
           where: image.context?.custom?.where || '',
@@ -34,7 +32,7 @@ export async function GET() {
           tags: image.context?.custom?.tags ? image.context.custom.tags.split(', ') : [],
           public_id: image.public_id
         }
-      });
+    ));
 
     // Return the images as a JSON response
     return NextResponse.json(images);
